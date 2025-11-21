@@ -2,17 +2,34 @@
 #include "src/power.hpp"
 
 int main() {
-  TriangleNumberCalculator calculator;
+  TriangleNumberCalculator calc;
+  int choice;
+  int n, m;
 
-  std::cout << calculator.value(1) << "\n";
-  std::cout << calculator.value(2) << "\n";
-  std::cout << calculator.value(4) << "\n";
+  std::cout << "Triangle Number Calculator\n";
+  std::cout << "1: value(n)\n2: add(n, m)\n3: subtract(n, m)\n";
+  std::cout << "Enter your choice: ";
+  std::cin >> choice;
 
-  std::cout << calculator.add(1, 1) << "\n";
-  std::cout << calculator.add(2, 3) << "\n";
-  std::cout << calculator.add(4, 2) << "\n";
+  if (choice == 1) {
+    std::cout << "Enter n: ";
+    std::cin >> n;
+    std::cout << "T(" << n << ") = " << calc.value(n) << "\n";
+  } else if (choice == 2) {
+    std::cout << "Enter n: ";
+    std::cin >> n;
+    std::cout << "Enter m: ";
+    std::cin >> m;
+    std::cout << "T(" << n << ") + T(" << m << ") = " << calc.add(n, m) << "\n";
+  } else if (choice == 3) {
+    std::cout << "Enter n: ";
+    std::cin >> n;
+    std::cout << "Enter m: ";
+    std::cin >> m;
+    std::cout << "T(" << n << ") - T(" << m << ") = " << calc.subtract(n, m) << "\n";
+  } else {
+    std::cout << "Invalid choice.\n";
+  }
 
-  std::cout << calculator.subtract(1, 1) << "\n";
-  std::cout << calculator.subtract(2, 3) << "\n";
-  std::cout << calculator.subtract(4, 2) << "\n";
+  return 0;
 }
